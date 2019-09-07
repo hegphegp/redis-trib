@@ -1,6 +1,7 @@
 FROM ruby:2.5-alpine3.7
-RUN echo "http://mirrors.aliyun.com/alpine/v3.7/main" > /etc/apk/repositories && \
-    echo "http://mirrors.aliyun.com/alpine/v3.7/community" >> /etc/apk/repositories
+
+# RUN echo "http://mirrors.aliyun.com/alpine/v3.7/main" > /etc/apk/repositories && \
+#    echo "http://mirrors.aliyun.com/alpine/v3.7/community" >> /etc/apk/repositories
 # gem安装制定版本软件的命令  gem install redis -v 4.0.1 , 与 redis的版本相匹配, 避免版本不匹配导致问题
 RUN gem install redis:4.0.1; \
     apk add --no-cache curl tar; \
